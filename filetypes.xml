@@ -1,0 +1,14 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="styles" type="CSS" />
+      <mapping pattern="try" type="PHP" />
+      <mapping pattern="carousel" type="PHP" />
+      <mapping pattern="help" type="PHP" />
+      <mapping pattern="readme" type="PLAIN_TEXT" />
+      <mapping pattern="test" type="XML" />
+      <mapping pattern="programmes" type="XML" />
+      <mapping pattern="programmes2" type="XML" />
+    </extensionMap>
+  </component>
+</application>
