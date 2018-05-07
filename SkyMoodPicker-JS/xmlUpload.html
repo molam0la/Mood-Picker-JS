@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xml upload</title>
+</head>
+<body>
+<script>
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                printResult(this);
+            }
+        };
+        xmlhttp.open("GET", "uploads/programmes.xml", true);
+        xmlhttp.send();
+    }
+
+    function printResult(xml) {
+        var programme, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML;
+        programme = "";
+        image = "";
+        programmeList = xmlDoc.getElementsByTagName("name");
+        imageList = xmlDoc.getElementsByTagName('img_path');
+        for (i = 0; i< programmeList.length; i++) {
+            programme += programmeList[i].childNodes[0].nodeValue + "<br>";
+            programme += "<img src='" + imageList[i].childNodes[0].nodeValue + "' />";
+        }
+        document.getElementById("result-test").innerHTML = programme;
+    }
+</script>
+</body>
+
+<span>
+    <button type="button" onclick="loadXMLDoc()">
+See programmes</button>
+        <p id="result-test">XML TO DISPLAY HERE</p>
+</span>
+</html>
